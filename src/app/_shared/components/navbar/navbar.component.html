@@ -1,0 +1,16 @@
+<ul>
+    <li>
+        <a [routerLink]="['/home']">Logo</a>
+    </li>
+    <li><a [routerLink]="['/home']">Ana Sayfa</a></li>
+    <div *ngFor="let category of categories; index as i">
+        <li class="dropdown">
+            <a class="dropbtn">{{ category.name }}</a>
+            <div class="dropdown-content">
+                <div *ngFor="let subCat of category.children">
+                    <a [routerLink]="['/category', subCat.id]"> {{ subCat.name }}</a>
+                </div>
+            </div>
+        </li>
+    </div>
+</ul>
